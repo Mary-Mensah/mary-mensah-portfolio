@@ -1,0 +1,24 @@
+{
+  "name": "mary-mensah-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mary-Mensah/mary-mensah-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mary-Mensah/mary-mensah-portfolio/issues"
+  },
+  "homepage": "https://github.com/Mary-Mensah/mary-mensah-portfolio#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.1.13"
+  }
+}

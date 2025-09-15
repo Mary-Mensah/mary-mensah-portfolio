@@ -1,350 +1,1133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mary Mensah - UI/UX Designer & Aspiring System Analyst</title>
-    <meta name="description" content="Portfolio of Mary Mensah, UI/UX Designer and aspiring System Analyst with expertise in web development and system analysis">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <meta
+      name="description"
+      content="Portfolio of Mary Mensah, UI/UX Designer and aspiring System Analyst with expertise in web development and system analysis"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.0"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              lavender: "#E6E6FA",
+              blush: "#FFB6C1",
+              mint: "#98FB98",
+              "soft-white": "#FFF8F8",
+              "light-lavender": "#F8F8FF",
+              "dark-gray": "#2F2F2F",
+              "medium-gray": "#777777",
+              "deep-lavender": "#6B46C1",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Hamburger menu animation */
+      #nav-hamburger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      #nav-hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      #nav-hamburger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    </style>
+  </head>
+  <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar" aria-label="Main navigation">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home" aria-label="Mary Mensah Home">Mary Mensah</a>
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300"
+      id="navbar"
+      aria-label="Main navigation"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0">
+            <a
+              href="#home"
+              class="text-xl font-bold text-deep-lavender hover:text-blush transition-colors duration-200"
+              aria-label="Mary Mensah Home"
+              >Mary Mensah</a
+            >
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4" id="nav-menu">
+              <a
+                href="#home"
+                class="nav-link text-dark-gray hover:text-lavender px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                aria-label="Go to Home section"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="nav-link text-dark-gray hover:text-lavender px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                aria-label="Go to About section"
+                >About</a
+              >
+              <a
+                href="#skills"
+                class="nav-link text-dark-gray hover:text-lavender px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                aria-label="Go to Skills section"
+                >Skills</a
+              >
+              <a
+                href="#experience"
+                class="nav-link text-dark-gray hover:text-lavender px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                aria-label="Go to Experience section"
+                >Experience</a
+              >
+              <a
+                href="#projects"
+                class="nav-link text-dark-gray hover:text-lavender px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                aria-label="Go to Projects section"
+                >Projects</a
+              >
+              <a
+                href="#contact"
+                class="nav-link text-dark-gray hover:text-lavender px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                aria-label="Go to Contact section"
+                >Contact</a
+              >
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link" aria-label="Go to Home section">Home</a>
-                <a href="#about" class="nav-link" aria-label="Go to About section">About</a>
-                <a href="#skills" class="nav-link" aria-label="Go to Skills section">Skills</a>
-                <a href="#experience" class="nav-link" aria-label="Go to Experience section">Experience</a>
-                <a href="#projects" class="nav-link" aria-label="Go to Projects section">Projects</a>
-                <a href="#contact" class="nav-link" aria-label="Go to Contact section">Contact</a>
-            </div>
-            <div class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+          </div>
+          <div class="md:hidden">
+            <button
+              class="bg-light-lavender inline-flex items-center justify-center p-2 rounded-md text-dark-gray hover:text-lavender hover:bg-lavender/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-lavender"
+              id="nav-hamburger"
+              aria-label="Toggle navigation menu"
+            >
+              <span
+                class="block w-6 h-0.5 bg-current transform transition-all duration-300"
+              ></span>
+              <span
+                class="block w-6 h-0.5 bg-current transform transition-all duration-300 mt-1"
+              ></span>
+              <span
+                class="block w-6 h-0.5 bg-current transform transition-all duration-300 mt-1"
+              ></span>
+            </button>
+          </div>
         </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        class="md:hidden hidden bg-white border-t border-gray-200"
+        id="nav-menu-mobile"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#home"
+            class="nav-link text-dark-gray hover:text-lavender block px-3 py-2 rounded-md text-base font-medium"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="nav-link text-dark-gray hover:text-lavender block px-3 py-2 rounded-md text-base font-medium"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="nav-link text-dark-gray hover:text-lavender block px-3 py-2 rounded-md text-base font-medium"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            class="nav-link text-dark-gray hover:text-lavender block px-3 py-2 rounded-md text-base font-medium"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="nav-link text-dark-gray hover:text-lavender block px-3 py-2 rounded-md text-base font-medium"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="nav-link text-dark-gray hover:text-lavender block px-3 py-2 rounded-md text-base font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 class="hero-title">Mary Mensah</h1>
-                        <h2 class="hero-subtitle">UI/UX Designer & Aspiring System Analyst</h2>
-                        <p class="hero-description">
-                            Web Developer with a solid foundation in IT support, seeking to transition into a System Analyst role. 
-                            Strong leadership skills and a proactive approach to problem-solving and system development.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="#projects" class="btn btn--primary" aria-label="View my portfolio projects">View Portfolio</a>
-                            <a href="#contact" class="btn btn--outline" aria-label="Contact me">Contact Me</a>
-                        </div>
-                    </div>
-                    <div class="hero-image">
-                        <div class="hero-avatar" aria-label="Mary Mensah profile">
-                            <span>MM</span>
-                        </div>
-                    </div>
-                </div>
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="min-h-screen flex items-center relative overflow-hidden pt-16"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-lavender to-blush opacity-10"
+        ></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+              <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-gray mb-4 leading-tight"
+              >
+                Mary Mensah
+              </h1>
+              <h2 class="text-xl md:text-2xl text-blush mb-6 font-medium">
+                UI/UX Designer & Aspiring System Analyst
+              </h2>
+              <p
+                class="text-lg text-medium-gray mb-8 leading-relaxed max-w-2xl"
+              >
+                Creating intuitive and beautiful user experiences through
+                thoughtful design and analytical thinking. Passionate about
+                bridging creativity and technology to solve real-world problems.
+              </p>
+              <div
+                class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
+                <a
+                  href="#projects"
+                  class="bg-lavender text-dark-gray px-8 py-3 rounded-lg font-medium hover:bg-lavender/80 transition-colors duration-200 inline-block text-center"
+                  >View Portfolio</a
+                >
+                <a
+                  href="#contact"
+                  class="border-2 border-lavender text-deep-lavender px-8 py-3 rounded-lg font-medium hover:bg-lavender hover:text-dark-gray transition-all duration-200 inline-block text-center"
+                  >Contact Me</a
+                >
+              </div>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>Background</h3>
-                        <p>I am passionate about creating intuitive user experiences and leveraging analytical skills to contribute to innovative system solutions. With a strong foundation in web development and IT support, I'm transitioning into system analysis.</p>
-                        
-                        <h3>Career Aspiration</h3>
-                        <p>To become a System Analyst where I can apply my web development background, analytical skills, and leadership experiences to analyze system requirements, design innovative solutions, and contribute to the enhancement of system efficiency and effectiveness.</p>
-
-                        <h3>Personal Interests</h3>
-                        <ul class="interests-list">
-                            <li>Enhance graphic design and web development through photography and digital art</li>
-                            <li>Engage in hiking and cycling to boost health, creativity, and problem-solving</li>
-                            <li>Volunteer at tech workshops to inspire young girls and promote diversity in technology</li>
-                        </ul>
-                    </div>
-                    <div class="about-education">
-                        <h3>Education</h3>
-                        <div class="education-item">
-                            <div class="education-header">
-                                <h4>BSc. Information Technology</h4>
-                                <span class="education-period">January 2021 - August 2024</span>
-                            </div>
-                            <p class="education-institution">University of Cape Coast, Ghana</p>
-                            <p class="education-grade">2nd Class Upper (3.2/4.0 CGPA)</p>
-                            <ul class="education-details">
-                                <li>Specialized in software development and system analysis</li>
-                                <li>Participated in various tech forums and workshops</li>
-                                <li>Financial Secretary (Nov 2022 - Nov 2023): Managed financial records and budgets</li>
-                            </ul>
-                        </div>
-                        <div class="education-item">
-                            <div class="education-header">
-                                <h4>General Science</h4>
-                                <span class="education-period">September 2016 - June 2019</span>
-                            </div>
-                            <p class="education-institution">Ideal College, Takoradi, Ghana</p>
-                            <p class="education-position">Senior Girls' Prefect</p>
-                        </div>
-                    </div>
+            <div class="flex justify-center lg:justify-end">
+              <div class="relative">
+                <div
+                  class="w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-xl"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=320&h=320&fit=crop&crop=face&auto=format&q=80"
+                    alt="Mary Mensah profile"
+                    class="w-full h-full object-cover"
+                  />
                 </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills-section">
-            <div class="container">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>UI/UX Design</h3>
-                        <div class="skills-list">
-                            <span class="skill-item">User Interface Design</span>
-                            <span class="skill-item">User Experience Design</span>
-                            <span class="skill-item">User Research</span>
-                            <span class="skill-item">Wireframing</span>
-                            <span class="skill-item">Prototyping</span>
-                            <span class="skill-item">Mockup Design</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Web Development</h3>
-                        <div class="skills-progress">
-                            <div class="skill-bar">
-                                <span class="skill-name">HTML</span>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-bar">
-                                <span class="skill-name">CSS</span>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-bar">
-                                <span class="skill-name">JavaScript</span>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-bar">
-                                <span class="skill-name">React</span>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-bar">
-                                <span class="skill-name">PHP</span>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 70%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Programming & Tools</h3>
-                        <div class="skills-list">
-                            <span class="skill-item">C++</span>
-                            <span class="skill-item">Python</span>
-                            <span class="skill-item">Adobe Creative Suite</span>
-                            <span class="skill-item">Database Management</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Soft Skills</h3>
-                        <div class="skills-list">
-                            <span class="skill-item">Leadership</span>
-                            <span class="skill-item">Project Management</span>
-                            <span class="skill-item">Technical Support</span>
-                            <span class="skill-item">Problem-solving</span>
-                            <span class="skill-item">Communication</span>
-                            <span class="skill-item">Team Collaboration</span>
-                        </div>
-                    </div>
-                </div>
+      <!-- About Section -->
+      <section id="about" class="py-20 bg-light-lavender">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-dark-gray mb-16"
+          >
+            About Me
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 class="text-2xl font-semibold text-deep-lavender mb-4">
+                Background
+              </h3>
+              <p class="text-medium-gray mb-6 leading-relaxed">
+                I am passionate about creating intuitive user experiences and
+                leveraging analytical skills to contribute to innovative system
+                solutions. With a strong foundation in web development and IT
+                support, I'm transitioning into system analysis.
+              </p>
+
+              <h3 class="text-2xl font-semibold text-deep-lavender mb-4">
+                Career Aspiration
+              </h3>
+              <p class="text-medium-gray mb-6 leading-relaxed">
+                To become a System Analyst where I can apply my web development
+                background, analytical skills, and leadership experiences to
+                analyze system requirements, design innovative solutions, and
+                contribute to the enhancement of system efficiency and
+                effectiveness.
+              </p>
+
+              <h3 class="text-2xl font-semibold text-lavender mb-4">
+                Personal Interests
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-center text-medium-gray">
+                  <i class="fas fa-camera text-mint mr-3"></i> Enhance graphic
+                  design and web development through photography and digital art
+                </li>
+                <li class="flex items-center text-medium-gray">
+                  <i class="fas fa-biking text-mint mr-3"></i> Engage in hiking
+                  and cycling to boost health, creativity, and problem-solving
+                </li>
+                <li class="flex items-center text-medium-gray">
+                  <i class="fas fa-users text-mint mr-3"></i> Volunteer at tech
+                  workshops to inspire young girls and promote diversity in
+                  technology
+                </li>
+              </ul>
             </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="experience-section">
-            <div class="container">
-                <h2 class="section-title">Professional Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3>UI/UX Designer</h3>
-                                <span class="timeline-period">October 2024 - Present</span>
-                            </div>
-                            <h4 class="timeline-company">AmaliTech, Takoradi, Ghana</h4>
-                            <ul class="timeline-responsibilities">
-                                <li>Designed intuitive user interfaces to enhance user experience</li>
-                                <li>Conducted user research and testing to improve design functionality</li>
-                                <li>Developed wireframes, prototypes, and mockups for web and mobile applications</li>
-                                <li>Collaborated with developers to ensure seamless design implementation</li>
-                                <li>Improved usability and aesthetics, leading to increased user satisfaction</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3>IT Technician (Internship)</h3>
-                                <span class="timeline-period">September 2023 - October 2023</span>
-                            </div>
-                            <h4 class="timeline-company">Ghana Rubber Company, Takoradi, Ghana</h4>
-                            <ul class="timeline-responsibilities">
-                                <li>Maintained and troubleshot IT systems to ensure efficiency</li>
-                                <li>Provided staff IT support, boosting technical proficiency</li>
-                                <li>Assisted with updates and security patches, reducing vulnerabilities</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3>IT Technician (Internship)</h3>
-                                <span class="timeline-period">June 2022 - July 2022</span>
-                            </div>
-                            <h4 class="timeline-company">Ghana Rubber Company, Takoradi, Ghana</h4>
-                            <ul class="timeline-responsibilities">
-                                <li>Ensured data backup and security</li>
-                                <li>Provided user support</li>
-                                <li>Troubleshot technical issues</li>
-                                <li>Maintained hardware and software</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex justify-center lg:justify-end">
+              <img
+                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=500&fit=crop&auto=format&q=80"
+                alt="Mary Mensah working on design"
+                class="rounded-lg shadow-lg max-w-full h-auto"
+              />
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section">
-            <div class="container">
-                <h2 class="section-title">Projects & Certifications</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Service Finder Application</h3>
-                        <p class="project-type">Final Year Project</p>
-                        <p class="project-description">
-                            A comprehensive application designed to help users find various services in their area. 
-                            This project showcased my skills in web development, database management, and system analysis.
-                        </p>
-                        <div class="project-technologies">
-                            <span class="tech-tag">Web Development</span>
-                            <span class="tech-tag">Database Management</span>
-                            <span class="tech-tag">System Analysis</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="certifications">
-                    <h3>Certifications</h3>
-                    <div class="cert-grid">
-                        <div class="cert-item">
-                            <h4>Database Management Essentials</h4>
-                            <p class="cert-issuer">University of Colorado System (Coursera)</p>
-                            <p class="cert-date">Completed: October 11, 2022</p>
-                            <div class="cert-skills">
-                                <span class="skill-tag">SQL queries</span>
-                                <span class="skill-tag">Data organization</span>
-                                <span class="skill-tag">Database design</span>
-                            </div>
-                        </div>
-                        <div class="cert-item">
-                            <h4>CS403: Introduction to Modern Database Systems</h4>
-                            <p class="cert-issuer">Saylor.org Academy</p>
-                            <p class="cert-date">Completed: March 7, 2024</p>
-                            <div class="cert-skills">
-                                <span class="skill-tag">Data modeling</span>
-                                <span class="skill-tag">SQL</span>
-                                <span class="skill-tag">Database design principles</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-deep-lavender mb-16"
+          >
+            Skills & Expertise
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div
+              class="bg-light-lavender p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <h3
+                class="text-xl font-semibold text-deep-lavender mb-4 flex items-center"
+              >
+                <i class="fas fa-palette text-blush mr-2"></i> UI/UX Design
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-mobile-alt text-mint mr-1"></i> User
+                  Interface Design
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-users text-mint mr-1"></i> User Experience
+                  Design
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-search text-mint mr-1"></i> User Research
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-sitemap text-mint mr-1"></i> Wireframing
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-cube text-mint mr-1"></i> Prototyping
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-image text-mint mr-1"></i> Mockup Design
+                </span>
+              </div>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Contact Information</h3>
-                        <div class="contact-item">
-                            <span class="contact-label">Email:</span>
-                            <a href="mailto:maryadwoa844@gmail.com">maryadwoa844@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Phone:</span>
-                            <a href="tel:+233552499316">+233 552 499 316</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Location:</span>
-                            <span>Takoradi, Ghana</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">LinkedIn:</span>
-                            <a href="https://www.linkedin.com/in/mary-mensah" target="_blank" rel="noopener noreferrer">linkedin.com/in/mary-mensah</a>
-                        </div>
-                    </div>
-                    <div class="contact-form">
-                        <h3>Send a Message</h3>
-                        <form id="contact-form" novalidate>
-                            <div class="form-group">
-                                <label for="name" class="form-label">Name *</label>
-                                <input type="text" id="name" name="name" class="form-control" required aria-describedby="name-error">
-                                <span class="error-message" id="name-error"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email *</label>
-                                <input type="email" id="email" name="email" class="form-control" required aria-describedby="email-error">
-                                <span class="error-message" id="email-error"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject" class="form-label">Subject *</label>
-                                <input type="text" id="subject" name="subject" class="form-control" required aria-describedby="subject-error">
-                                <span class="error-message" id="subject-error"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="message" class="form-label">Message *</label>
-                                <textarea id="message" name="message" class="form-control" rows="5" required aria-describedby="message-error"></textarea>
-                                <span class="error-message" id="message-error"></span>
-                            </div>
-                            <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
-                        </form>
-                    </div>
+            <div
+              class="bg-light-lavender p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <h3
+                class="text-xl font-semibold text-deep-lavender mb-4 flex items-center"
+              >
+                <i class="fas fa-code text-blush mr-2"></i> Web Development
+              </h3>
+              <div class="space-y-3">
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span class="font-medium">HTML</span>
+                    <span>90%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div
+                      class="bg-lavender h-2 rounded-full"
+                      style="width: 90%"
+                    ></div>
+                  </div>
                 </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span class="font-medium">CSS</span>
+                    <span>85%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div
+                      class="bg-lavender h-2 rounded-full"
+                      style="width: 85%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span class="font-medium">JavaScript</span>
+                    <span>80%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div
+                      class="bg-lavender h-2 rounded-full"
+                      style="width: 80%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span class="font-medium">React</span>
+                    <span>75%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div
+                      class="bg-lavender h-2 rounded-full"
+                      style="width: 75%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span class="font-medium">PHP</span>
+                    <span>70%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div
+                      class="bg-lavender h-2 rounded-full"
+                      style="width: 70%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+            <div
+              class="bg-light-lavender p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <h3
+                class="text-xl font-semibold text-deep-lavender mb-4 flex items-center"
+              >
+                <i class="fas fa-tools text-blush mr-2"></i> Programming & Tools
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-code-branch text-mint mr-1"></i> C++
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fab fa-python text-mint mr-1"></i> Python
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-bezier-curve text-mint mr-1"></i> Adobe
+                  Creative Suite
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-database text-mint mr-1"></i> Database
+                  Management
+                </span>
+              </div>
+            </div>
+            <div
+              class="bg-light-lavender p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <h3
+                class="text-xl font-semibold text-deep-lavender mb-4 flex items-center"
+              >
+                <i class="fas fa-user-friends text-blush mr-2"></i> Soft Skills
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-crown text-mint mr-1"></i> Leadership
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-tasks text-mint mr-1"></i> Project Management
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-headset text-mint mr-1"></i> Technical
+                  Support
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-lightbulb text-mint mr-1"></i>
+                  Problem-solving
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-comments text-mint mr-1"></i> Communication
+                </span>
+                <span
+                  class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-sm font-medium flex items-center"
+                >
+                  <i class="fas fa-handshake text-mint mr-1"></i> Team
+                  Collaboration
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="py-20 bg-light-lavender">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-dark-gray mb-16"
+          >
+            Professional Experience
+          </h2>
+          <div class="relative">
+            <!-- Timeline line -->
+            <div
+              class="absolute left-8 md:left-1/2 md:transform md:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-lavender"
+            ></div>
+
+            <div class="space-y-12">
+              <!-- Experience Item 1 -->
+              <div
+                class="relative flex flex-col md:flex-row items-start md:items-center"
+              >
+                <div
+                  class="flex-shrink-0 w-16 h-16 bg-lavender rounded-full flex items-center justify-center text-white text-xl mb-4 md:mb-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 z-10"
+                >
+                  <i class="fas fa-palette"></i>
+                </div>
+                <div class="md:w-1/2 md:pr-12 md:text-right">
+                  <div
+                    class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                  >
+                    <div
+                      class="flex flex-col md:flex-row md:justify-between md:items-start mb-2"
+                    >
+                      <h3 class="text-xl font-semibold text-dark-gray">
+                        UI/UX Designer
+                      </h3>
+                      <span class="text-mint font-medium text-sm mt-1 md:mt-0"
+                        >October 2024 - Present</span
+                      >
+                    </div>
+                    <h4 class="text-deep-lavender font-medium mb-4">
+                      AmaliTech, Takoradi, Ghana
+                    </h4>
+                    <ul class="text-medium-gray space-y-2 text-sm">
+                      <li class="flex items-start">
+                        <i
+                          class="fas fa-check text-mint mr-2 mt-0.5 flex-shrink-0"
+                        ></i>
+                        Designed intuitive user interfaces to enhance user
+                        experience
+                      </li>
+                      <li class="flex items-start">
+                        <i
+                          class="fas fa-check text-mint mr-2 mt-0.5 flex-shrink-0"
+                        ></i>
+                        Conducted user research and testing to improve design
+                        functionality
+                      </li>
+                      <li class="flex items-start">
+                        <i
+                          class="fas fa-check text-mint mr-2 mt-0.5 flex-shrink-0"
+                        ></i>
+                        Developed wireframes, prototypes, and mockups for web
+                        and mobile applications
+                      </li>
+                      <li class="flex items-start">
+                        <i
+                          class="fas fa-check text-mint mr-2 mt-0.5 flex-shrink-0"
+                        ></i>
+                        Collaborated with developers to ensure seamless design
+                        implementation
+                      </li>
+                      <li class="flex items-start">
+                        <i
+                          class="fas fa-check text-mint mr-2 mt-0.5 flex-shrink-0"
+                        ></i>
+                        Improved usability and aesthetics, leading to increased
+                        user satisfaction
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="hidden md:block md:w-1/2 md:pl-12"></div>
+              </div>
+
+              <!-- Experience Item 2 -->
+              <div
+                class="relative flex flex-col md:flex-row items-start md:items-center"
+              >
+                <div class="hidden md:block md:w-1/2 md:pr-12"></div>
+                <div
+                  class="flex-shrink-0 w-16 h-16 bg-lavender rounded-full flex items-center justify-center text-white text-xl mb-4 md:mb-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 z-10"
+                >
+                  <i class="fas fa-tools"></i>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                  <div
+                    class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                  >
+                    <div
+                      class="flex flex-col md:flex-row md:justify-between md:items-start mb-2"
+                    >
+                      <h3 class="text-xl font-semibold text-dark-gray">
+                        IT Technician (Internship)
+                      </h3>
+                      <span class="text-mint font-medium text-sm mt-1 md:mt-0"
+                        >September 2023 - October 2023</span
+                      >
+                    </div>
+                    <h4 class="text-lavender font-medium mb-4">
+                      Ghana Rubber Company, Takoradi, Ghana
+                    </h4>
+                    <ul class="text-medium-gray space-y-2 text-sm">
+                      <li class="flex items-start">
+                        <i
+                          class="fas fa-check text-mint mr-2 mt-0.5 flex-shrink-0"
+                        ></i>
+                        Maintained and troubleshot IT systems to ensure
+                        efficiency
+                      </li>
+                      <li class="flex items-start">
+                        <i
+                          class="fas fa-check text-mint mr-2 mt-0.5 flex-shrink-0"
+                        ></i>
+                        Provided staff IT support, boosting technical
+                        proficiency
+                      </li>
+                      <li class="flex items-start">
+                        <i
+                          class="fas fa-check text-mint mr-2 mt-0.5 flex-shrink-0"
+                        ></i>
+                        Assisted with updates and security patches, reducing
+                        vulnerabilities
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Experience Item 3 -->
+              <div
+                class="relative flex flex-col md:flex-row items-start md:items-center"
+              >
+                <div
+                  class="flex-shrink-0 w-16 h-16 bg-lavender rounded-full flex items-center justify-center text-white text-xl mb-4 md:mb-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 z-10"
+                >
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <div class="md:w-1/2 md:pr-12 md:text-right">
+                  <div
+                    class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                  >
+                    <div
+                      class="flex flex-col md:flex-row md:justify-between md:items-start mb-2"
+                    >
+                      <h3 class="text-xl font-semibold text-dark-gray">
+                        IT Technician (Internship)
+                      </h3>
+                      <span class="text-mint font-medium text-sm mt-1 md:mt-0"
+                        >June 2022 - July 2022</span
+                      >
+                    </div>
+                    <h4 class="text-lavender font-medium mb-4">
+                      Ghana Rubber Company, Takoradi, Ghana
+                    </h4>
+                    <ul class="text-medium-gray space-y-2 text-sm">
+                      <li class="flex items-start">
+                        <i
+                          class="fas fa-check text-mint mr-2 mt-0.5 flex-shrink-0"
+                        ></i>
+                        Ensured data backup and security
+                      </li>
+                      <li class="flex items-start">
+                        <i
+                          class="fas fa-check text-mint mr-2 mt-0.5 flex-shrink-0"
+                        ></i>
+                        Provided user support
+                      </li>
+                      <li class="flex items-start">
+                        <i
+                          class="fas fa-check text-mint mr-2 mt-0.5 flex-shrink-0"
+                        ></i>
+                        Troubleshot technical issues
+                      </li>
+                      <li class="flex items-start">
+                        <i
+                          class="fas fa-check text-mint mr-2 mt-0.5 flex-shrink-0"
+                        ></i>
+                        Maintained hardware and software
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="hidden md:block md:w-1/2 md:pl-12"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-dark-gray mb-16"
+          >
+            Projects & Certifications
+          </h2>
+
+          <!-- Projects Grid -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          >
+            <div
+              class="bg-light-lavender rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <div class="aspect-video overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&auto=format&q=80"
+                  alt="Service Finder Application"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-dark-gray mb-2">
+                  Service Finder Application
+                </h3>
+                <p class="text-mint font-medium text-sm mb-3">
+                  Final Year Project
+                </p>
+                <p class="text-medium-gray text-sm mb-4">
+                  A comprehensive application designed to help users find
+                  various services in their area. This project showcased my
+                  skills in web development, database management, and system
+                  analysis.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >Web Development</span
+                  >
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >Database Management</span
+                  >
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >System Analysis</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-light-lavender rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <div class="aspect-video overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=250&fit=crop&auto=format&q=80"
+                  alt="UI Design Project"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-dark-gray mb-2">
+                  E-commerce Mobile App Design
+                </h3>
+                <p class="text-mint font-medium text-sm mb-3">UI/UX Design</p>
+                <p class="text-medium-gray text-sm mb-4">
+                  Designed a user-friendly mobile app for online shopping with
+                  focus on intuitive navigation and seamless checkout process.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >Figma</span
+                  >
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >User Research</span
+                  >
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >Prototyping</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-light-lavender rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <div class="aspect-video overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop&auto=format&q=80"
+                  alt="Portfolio Website"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-dark-gray mb-2">
+                  Personal Portfolio Website
+                </h3>
+                <p class="text-mint font-medium text-sm mb-3">
+                  Web Development
+                </p>
+                <p class="text-medium-gray text-sm mb-4">
+                  Responsive portfolio website showcasing design and development
+                  skills with modern UI/UX principles.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >HTML</span
+                  >
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >CSS</span
+                  >
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >JavaScript</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div>
+            <h3 class="text-2xl font-bold text-dark-gray mb-8 text-center">
+              Certifications
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div
+                class="bg-light-lavender p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-lavender rounded-full flex items-center justify-center text-white mr-4"
+                  >
+                    <i class="fas fa-database"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold text-dark-gray">
+                      Database Management Essentials
+                    </h4>
+                    <p class="text-mint font-medium text-sm">
+                      University of Colorado System (Coursera)
+                    </p>
+                  </div>
+                </div>
+                <p class="text-medium-gray text-sm mb-3">
+                  Completed: October 11, 2022
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >SQL queries</span
+                  >
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >Data organization</span
+                  >
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >Database design</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="bg-light-lavender p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-lavender rounded-full flex items-center justify-center text-white mr-4"
+                  >
+                    <i class="fas fa-server"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold text-dark-gray">
+                      CS403: Introduction to Modern Database Systems
+                    </h4>
+                    <p class="text-mint font-medium text-sm">
+                      Saylor.org Academy
+                    </p>
+                  </div>
+                </div>
+                <p class="text-medium-gray text-sm mb-3">
+                  Completed: March 7, 2024
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >Data modeling</span
+                  >
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >SQL</span
+                  >
+                  <span
+                    class="bg-blush/20 text-dark-gray px-3 py-1 rounded-full text-xs font-medium"
+                    >Database design principles</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 bg-light-lavender">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-dark-gray mb-16"
+          >
+            Get In Touch
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Information -->
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+              <h3 class="text-2xl font-semibold text-dark-gray mb-8">
+                Contact Information
+              </h3>
+              <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-lavender rounded-full flex items-center justify-center text-white flex-shrink-0"
+                  >
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <span class="block text-medium-gray text-sm font-medium"
+                      >Email:</span
+                    >
+                    <a
+                      href="mailto:maryadwoa844@gmail.com"
+                      class="text-dark-gray hover:text-lavender transition-colors duration-300"
+                    >
+                      maryadwoa844@gmail.com
+                    </a>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-lavender rounded-full flex items-center justify-center text-white flex-shrink-0"
+                  >
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div>
+                    <span class="block text-medium-gray text-sm font-medium"
+                      >Phone:</span
+                    >
+                    <a
+                      href="tel:+233552499316"
+                      class="text-dark-gray hover:text-lavender transition-colors duration-300"
+                    >
+                      +233 552 499 316
+                    </a>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-lavender rounded-full flex items-center justify-center text-white flex-shrink-0"
+                  >
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <span class="block text-medium-gray text-sm font-medium"
+                      >Location:</span
+                    >
+                    <span class="text-dark-gray">Takoradi, Ghana</span>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-lavender rounded-full flex items-center justify-center text-white flex-shrink-0"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                  <div>
+                    <span class="block text-medium-gray text-sm font-medium"
+                      >LinkedIn:</span
+                    >
+                    <a
+                      href="https://www.linkedin.com/in/mary-mensah"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-dark-gray hover:text-lavender transition-colors duration-300"
+                    >
+                      linkedin.com/in/mary-mensah
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+              <h3 class="text-2xl font-semibold text-dark-gray mb-8">
+                Send a Message
+              </h3>
+              <form id="contact-form" novalidate class="space-y-6">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-medium text-medium-gray mb-2"
+                    >Name *</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lavender focus:border-transparent transition-colors duration-300"
+                    required
+                    aria-describedby="name-error"
+                  />
+                  <span
+                    class="error-message text-red-500 text-sm mt-1 block"
+                    id="name-error"
+                  ></span>
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-medium-gray mb-2"
+                    >Email *</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lavender focus:border-transparent transition-colors duration-300"
+                    required
+                    aria-describedby="email-error"
+                  />
+                  <span
+                    class="error-message text-red-500 text-sm mt-1 block"
+                    id="email-error"
+                  ></span>
+                </div>
+                <div>
+                  <label
+                    for="subject"
+                    class="block text-sm font-medium text-medium-gray mb-2"
+                    >Subject *</label
+                  >
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lavender focus:border-transparent transition-colors duration-300"
+                    required
+                    aria-describedby="subject-error"
+                  />
+                  <span
+                    class="error-message text-red-500 text-sm mt-1 block"
+                    id="subject-error"
+                  ></span>
+                </div>
+                <div>
+                  <label
+                    for="message"
+                    class="block text-sm font-medium text-medium-gray mb-2"
+                    >Message *</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lavender focus:border-transparent transition-colors duration-300 resize-vertical"
+                    required
+                    aria-describedby="message-error"
+                  ></textarea>
+                  <span
+                    class="error-message text-red-500 text-sm mt-1 block"
+                    id="message-error"
+                  ></span>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-lavender text-white py-3 px-6 rounded-lg hover:bg-lavender/90 transition-colors duration-300 font-medium"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Mary Mensah. All rights reserved.</p>
+    <footer class="bg-dark-gray text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0 text-center md:text-left">
+            <h3 class="text-xl font-bold mb-2">Mary Mensah</h3>
+            <p class="text-medium-gray">
+              UI/UX Designer & Aspiring System Analyst
+            </p>
+          </div>
+          <div class="flex space-x-6">
+            <a
+              href="https://www.linkedin.com/in/mary-mensah"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              class="w-10 h-10 bg-lavender rounded-full flex items-center justify-center hover:bg-lavender/80 transition-colors duration-300"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="mailto:maryadwoa844@gmail.com"
+              aria-label="Email"
+              class="w-10 h-10 bg-lavender rounded-full flex items-center justify-center hover:bg-lavender/80 transition-colors duration-300"
+            >
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="GitHub"
+              class="w-10 h-10 bg-lavender rounded-full flex items-center justify-center hover:bg-lavender/80 transition-colors duration-300"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Dribbble"
+              class="w-10 h-10 bg-lavender rounded-full flex items-center justify-center hover:bg-lavender/80 transition-colors duration-300"
+            >
+              <i class="fab fa-dribbble"></i>
+            </a>
+          </div>
         </div>
+        <div class="border-t border-medium-gray mt-8 pt-8 text-center">
+          <p class="text-medium-gray">
+            &copy; 2025 Mary Mensah. All rights reserved.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
